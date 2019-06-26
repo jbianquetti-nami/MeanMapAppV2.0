@@ -1,26 +1,10 @@
-// Sets the MongoDB Database options
-
 module.exports = {
 
-    mongolab:
+    bitnami:
     {
-        name: "mongolab",
-        url: "mongodb://BigCoder:BigCoder!@ds139817.mlab.com:39817/heroku_cnkn5vpn",
-        port: 27017
-    },
-
-    local:
-    {
-        name: "scotch-user-map-local",
-        url: "mongodb://localhost/MeanMapApp",
-        port: 27017
-    },
-
-    localtest:
-    {
-        name: "scotch-user-map-local",
-        url: "mongodb://localhost/MeanMapAppTest",
-        port: 27017
+        name: "MongoDB Service",
+        url: "mongodb://" + process.env.MONGODB_USERNAME + ":" + process.env.MONGODB_PASSWORD + "@" + process.env.MONGODB_HOST + "/" + process.env.MONGODB_DATABASE,
+        port: process.env.MONGODB_PORT
     }
 
 };
